@@ -42,16 +42,26 @@ function playGame () {
 
     while (i <= 5) {
         let result = playRound();
-        console.log(result);
         if (result == 1) {
             playerScore++
         } else if (result == 2) {
             computerScore++
+        } else if (result == 0) {
+            i--
         }
 
         console.log('Round:' + i + ' Human:' + playerScore + ' Computer:' + computerScore);
 
+        if (playerScore == 3) {
+            console.log ('You win!');
+            return
+        } else if (computerScore == 3) {
+            console.log ( 'You lose.' );
+            return
+        }
+
         i++
+
     }
 }
 
